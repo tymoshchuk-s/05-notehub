@@ -31,7 +31,7 @@ interface NewNote {
 }
 
 export const createNote = async (newNote: NewNote) => {
-    const res = await axios.post<NoteHttpResponse>('/notes', newNote, {
+    const res = await axios.post<Note>('/notes', newNote, {
         headers: {
             Authorization: `Bearer ${token}`,
         },
@@ -40,7 +40,7 @@ export const createNote = async (newNote: NewNote) => {
 }
 
 export const deleteNote = async (id: string) => {
-    const res = await axios.delete<NoteHttpResponse>(`/notes/${id}`,  {
+    const res = await axios.delete(`/notes/${id}`,  {
         headers: {
             Authorization: `Bearer ${token}`,
         },

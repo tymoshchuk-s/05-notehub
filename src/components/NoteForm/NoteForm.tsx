@@ -21,7 +21,7 @@ const OrderFormSchema = Yup.object().shape({
     .required("This is a required field!"),
   content: Yup.string()
     .max(500, "Content too long")
-    .required("This is a required field!"),
+    .notRequired(),
   tag: Yup.string()
     .oneOf(["Todo", "Work", "Personal", "Meeting", "Shopping"], "Invalid notes tag")
     .required(),
